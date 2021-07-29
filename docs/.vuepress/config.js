@@ -3,7 +3,7 @@ module.exports = {
   base: '/',
   themeConfig: {
     nav: [
-      { text: 'How it works', link: '/how-it-works/' },
+      { text: 'How it Works', link: '/how-it-works/' },
       { text: 'Getting Started', link: '/gettingstarted/' },
       { text: 'TheWall File', link: '/thewallfile/' },
       { text: 'Collaborate!', link: '/collaborate/'}
@@ -26,96 +26,17 @@ module.exports = {
       }],
       '/how-it-works/': [{
         title: 'Overview: How it Works',  
-        path: '/docs/overview',
+        path: '/how-it-works/',
         children: []
       }, {
-        title: 'Command Line Interface',   // required
-        path: '/docs/cli',
+        title: 'TheWall Instance',  
+        path: '/how-it-works/the-wall',
         children: []
       }, {
-        title: 'Chainfile',   // required
-        path: '/docs/chainfile',
+        title: 'TheWall File',  
+        path: '/how-it-works/the-file',
         children: []
-      }, {
-        title: 'Hateoas Generator',   // required
-        path: '/docs/hateoas',
-        children: []
-      }, {
-        title: 'The TableGateway Model',   // required
-        path: '/docs/model',
-        children: []
-      }, {
-        title: 'Chinchay Middleware',   // required
-        path: '/docs/middleware',
-        children: []
-      }, {
-        title: 'Error Handler: Manage http responses',   // required
-        path: '/docs/errorhandler',
-        children: []
-      }, {
-        title: 'API: Client Querying',   // required
-        path: '/docs/clientside',
-        children: []
-      }],
-      '/models/': [{
-        title: 'New',   // required
-        path: '/models/newsave',
-        children: []
-      }, {
-        title: 'Find',   // required
-        path: '/models/find',
-        children: []
-      }, {
-        title: 'Count',   // required
-        path: '/models/count',
-        children: []
-      }, {
-        title: 'Update',   // required
-        path: '/models/update',
-        children: []
-      }, {
-        title: 'Delete',   // required
-        path: '/models/delete',
-        children: []
-      }, {
-        title: 'Sum, Min & Max',   // required
-        path: '/models/aggregation',
-        children: []
-      }, {
-        title: 'Miscellaneous',   // required
-        path: '/models/miscellaneous',
-        children: []
-      }, {
-        title: 'Creating your own methods',   // required
-        path: '/models/customMethods',
-        children: []
-      }],
-      '/middleware/': [{
-        title: 'Access',   // required
-        path: '/middleware/access',
-        children: []
-      }, {
-        title: 'Middleware',   // required
-        path: '/middleware/middleware',
-        children: []
-      }, {
-        title: 'httpResponse',   // required
-        path: '/middleware/http-response',
-        children: []
-      }], 
-      '/errorhandler/': [{
-        title: 'ChinchayError',   // required
-        path: '/errorhandler/chinchay-error',
-        children: []
-      }, {
-        title: 'ErrorHandler',   // required
-        path: '/errorhandler/error-handler',
-        children: []
-      }, {
-        title: 'GoodPractices',   // required
-        path: '/errorhandler/good-practices',
-        children: []
-      }] 
+      }]
     },
   },
 }
