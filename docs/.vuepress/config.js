@@ -1,13 +1,11 @@
 module.exports = {
-  title: 'Chinchay Docs',
+  title: 'TheWall Docs',
   base: '/',
   themeConfig: {
     nav: [
+      { text: 'How it works', link: '/how-it-works/' },
       { text: 'Getting Started', link: '/gettingstarted/' },
-      { text: 'Docs', link: '/docs/' },
-      { text: 'The Model', link: '/models/' },
-      { text: 'Middleware', link: '/middleware/' },
-      { text: 'Error Handler', link: '/errorhandler/'},
+      { text: 'TheWall File', link: '/thewallfile/' },
       { text: 'Collaborate!', link: '/collaborate/'}
     ],
     displayAllHeaders: true,
@@ -26,8 +24,8 @@ module.exports = {
         path: '/gettingstarted/apiMiddleware',
         children: []
       }],
-      '/docs/': [{
-        title: 'Overview: What is Chinchay?',   // required
+      '/how-it-works/': [{
+        title: 'Overview: How it Works',  
         path: '/docs/overview',
         children: []
       }, {
