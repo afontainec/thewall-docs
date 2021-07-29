@@ -6,7 +6,7 @@ Do you want user A to have access to certain endpoints and user B to have access
 
 Well, the answers is... TheWall! This simple nodejs package allows you to indicate which user can access which endpoints. Each user can have any or many roles and each role has access to a given set of endpoints, and yes you can parameterize the endpoints. 
 
-### Wait what? how does that happen?
+### Wait what? So what does TheWall provides me?
 
 * It will allow you to manage the roles each user has, allowing you to add, delete and modify roles.
 * It will allow you to indicate which endpoints are accesible by which role
