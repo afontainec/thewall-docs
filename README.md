@@ -17,7 +17,11 @@ npm run start
 
 # Deploy 
 
-Create files
+Create files: 
+```
+npm run docs:build
+```
+and then:
 ```
 sh deploy.sh
 ```
