@@ -107,7 +107,95 @@ TheWall.deleteAccess({
 
 Will delete all the entries indicating that the user 1 has a role of storeOwner to store 3.
 
+## updateAccess
+
+This method is flexible and it allows to modify one-or-many entries.
+
+### Parameters
+
+It receives 2 parameter: 
+
+  1. where: This is an object that can have up to 4 properties, id, userId, role and filter, it indicates what entries to modify.
+  2. newValues: This is an object that can have up to 3 properties, userId, role and filter, it indicates what need to be updated. 
+
+### Example
+
+```javascript
+TheWall.updateAccess({
+  id: 103
+}, {
+  role: 'changeRole'
+}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+Will modify the entry with id=103 role to `changeRole`.
+
+
+```javascript
+TheWall.updateAccess({
+  role: 'changeRole',
+  user_id: 2
+}, {
+  filter: 'new-filter'
+}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+Will set the filter to `new-filter` for every entry where the role is `changeRole` and the user_id is `2`.
 
 ## findAccess
 
+This method allows to search for one-or-many entries.
+
+### Parameters
+
+It receives 1 parameter: 
+
+  1. params: This is an object that can have up to 3 properties, userId, role and filter, it indicates what need to be search for. 
+
+### Example
+
+```javascript
+TheWall.findAccess({
+  user_id: 2
+}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+Will return all the accesses of user with id `2`.
+
+```javascript
+TheWall.findAccess({
+  role: 'storeOwner'
+}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+Will return all the accesses where the role is `storeOwner`.
+
+```javascript
+TheWall.findAccess({}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+Passing an empty object will return all the accesses.
+
 ## getRoles 
+
+## hasAccess
