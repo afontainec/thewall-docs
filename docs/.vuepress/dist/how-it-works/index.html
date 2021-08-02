@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Overview How it works | TheWall Docs</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.9da3c180.css" as="style"><link rel="preload" href="/assets/js/app.cf0f4d7e.js" as="script"><link rel="preload" href="/assets/js/2.3f720234.js" as="script"><link rel="preload" href="/assets/js/8.f0c377f7.js" as="script"><link rel="prefetch" href="/assets/js/10.0a3f19e3.js"><link rel="prefetch" href="/assets/js/3.6a2b7fa3.js"><link rel="prefetch" href="/assets/js/4.1b09c2c5.js"><link rel="prefetch" href="/assets/js/5.123b0fd8.js"><link rel="prefetch" href="/assets/js/6.82803672.js"><link rel="prefetch" href="/assets/js/7.38ffc795.js"><link rel="prefetch" href="/assets/js/9.6d653a81.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9da3c180.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">TheWall Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/how-it-works/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/how-it-works/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/how-it-works/" aria-current="page" class="active sidebar-link">Overview: How it Works</a></li><li><a href="/how-it-works/the-wall.html" class="sidebar-link">TheWall Instance</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#initialization" class="sidebar-link">Initialization</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#addaccess" class="sidebar-link">addAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#deleteaccess" class="sidebar-link">deleteAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#updateaccess" class="sidebar-link">updateAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#findaccess" class="sidebar-link">findAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#getroles" class="sidebar-link">getRoles</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#hasaccess" class="sidebar-link">hasAccess</a></li></ul></li><li><a href="/how-it-works/the-file.html" class="sidebar-link">TheWall File</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#thewall-configuration-file" class="sidebar-link">TheWall Configuration file</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#access" class="sidebar-link">Access</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#knex" class="sidebar-link">knex</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#does-it-have-to-be-a-separate-file" class="sidebar-link">Does it have to be a separate file?</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="overview-how-it-works"><a href="#overview-how-it-works" class="header-anchor">#</a> Overview How it works</h1> <p>Welcome to  <strong>TheWall</strong></p> <p>The whole idea is that each users has one-or-many roles. And each role has access to one-or-many endpoints. Each role can be parameterized with a filter. What does this mean? Lets explain with an example, lets assume we have a website to manage stores, you may want user A to be the editor of the store &quot;BuyThis&quot; and user B to be the editor of store &quot;BuyHere&quot;, moreover to edit a store the endpoint is <code>&quot;/store/:name/edit&quot;</code>, where name changes accordingly. So what we do is assign a role of storeEditor to user A with filter &quot;BuyThis&quot; and a role storeEditor to user B with filter &quot;BuyHere&quot;. Then we make that the role storeEditor can access the endpoint <code>&quot;/store/:name/edit&quot;</code> but parameterized by name, therefore the user A only can access <code>&quot;/store/buyThis/edit&quot;</code> and not <code>&quot;/store/butHere/edit&quot;</code>. This adds flexibility and scalability as you can reuse roles.</p> <p><strong>NOTE</strong> Adding a filter to a role is optional.</p> <p>Find a fully detailed documentation of how it works. How to navigate through it and every other aspect. Go ahead dig in:</p> <p></p><div class="table-of-contents"><ul></ul></div><p></p> <ul><li><a href="/how-it-works/the-wall.html">TheWall Instance</a></li> <li><a href="/how-it-works/the-file.html">The configuration File</a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/how-it-works/the-wall.html">
+        TheWall Instance
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.cf0f4d7e.js" defer></script><script src="/assets/js/2.3f720234.js" defer></script><script src="/assets/js/8.f0c377f7.js" defer></script>
+  </body>
+</html>
