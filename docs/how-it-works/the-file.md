@@ -1,10 +1,35 @@
-## Overview THE FILE
+## TheWall Configuration file
+
+This file has two main purposes. The first is to indicate which endpoints are accesible by which roles. The second one is the indicate the path to the knex instance to connect to the Database. We will dig in to show how both works, but as a spoiler alert here is a config file:
+
+```javascript
+const path = require('path');
+
+module.exports = {
+  access: {
+    admin: ['*'],
+    storeOwner: [
+      ['/store/:id/edit', 'id', 'post']
+    ],
+  },
+  knex: path.join(__dirname, '.', 'knex.js'),
+};
+```
+
+It creates two roles, admin and storeOwner. Admin has access to everything, while storeOwner only can POST to `store/:id/edit`, but changing the id value with the corresponding filter.
+
+## Access
+
+### Creating Roles
+
+### Entry as text
+
+### Adding the filter
+
+### Entry as array
+
+### Wildcards
 
 
+## knex
 
-The most fascinating and valuable piece of Chinchay it's the flexible TableGateway model. It handles all the interaction from and to a certain table in the database, without you knowing any sql! With it, you will easily be able to create, read, update, delete, count, sum and many other operations in the database, it's true, it's just that simple. If by any chance you are a sql master and want to go beyond, Chinchay will allow you to do so.
-
-
-## Table Data Gateway
-
-So what is a Table Data Gateway? It is a design pattern proposed by [Martin Fowler](https://www.martinfowler.com/). In his own words, a Table Data Gateway holds all the SQL for accessing a single table or view: selects, inserts, updates, and deletes. Other code calls it's methods for all interaction with the database. You can read more about [Table Data Gateway here](https://www.martinfowler.com/eaaCatalog/tableDataGateway.html).
