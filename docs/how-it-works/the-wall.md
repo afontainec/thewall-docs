@@ -198,4 +198,26 @@ Passing an empty object will return all the accesses.
 
 ## getRoles 
 
+This function returns a list with all the possible roles.
+
 ## hasAccess
+
+This function indicate if the given user has access or not a given endpoint.
+
+### Parameters
+
+  1. userId: The id of the user you are querying for.
+  2. url: The url of the endpoint.
+  3. verb: The http verb of the endpoint, for example GET, POST, PUT, etc.
+
+### Example
+
+```javascript
+TheWall.hasAccess(1, '/store/10/edit', 'POST').then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+This function indicates if the user with id one has access to POST to `/store/10/edit`. The variable `result` will be `true` if it has access, elsewise it will be `false`.
