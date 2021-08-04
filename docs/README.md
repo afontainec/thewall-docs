@@ -1,4 +1,4 @@
-![Chinchay](https://chinchay-docs.herokuapp.com/assets/logo.png)
+![TheWall](/thewall-logo.png)
 
 ### Welcome to **TheWall**
 
