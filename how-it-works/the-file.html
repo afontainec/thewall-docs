@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TheWall Configuration file | TheWall Docs</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.9da3c180.css" as="style"><link rel="preload" href="/assets/js/app.59e023f1.js" as="script"><link rel="preload" href="/assets/js/2.3f720234.js" as="script"><link rel="preload" href="/assets/js/9.6d653a81.js" as="script"><link rel="prefetch" href="/assets/js/10.0a3f19e3.js"><link rel="prefetch" href="/assets/js/3.6a2b7fa3.js"><link rel="prefetch" href="/assets/js/4.1b09c2c5.js"><link rel="prefetch" href="/assets/js/5.7ab6c937.js"><link rel="prefetch" href="/assets/js/6.8b3a8a82.js"><link rel="prefetch" href="/assets/js/7.a0013af4.js"><link rel="prefetch" href="/assets/js/8.3912d4b4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9da3c180.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">TheWall Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/how-it-works/" class="nav-link router-link-active">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/how-it-works/" class="nav-link router-link-active">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/how-it-works/" aria-current="page" class="sidebar-link">Overview: How it Works</a></li><li><a href="/how-it-works/the-wall.html" class="sidebar-link">TheWall Instance</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#initialization" class="sidebar-link">Initialization</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#addaccess" class="sidebar-link">addAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#deleteaccess" class="sidebar-link">deleteAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#updateaccess" class="sidebar-link">updateAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#findaccess" class="sidebar-link">findAccess</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#getroles" class="sidebar-link">getRoles</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-wall.html#hasaccess" class="sidebar-link">hasAccess</a></li></ul></li><li><a href="/how-it-works/the-file.html" aria-current="page" class="active sidebar-link">TheWall File</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#thewall-configuration-file" class="sidebar-link">TheWall Configuration file</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#access" class="sidebar-link">Access</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#knex" class="sidebar-link">knex</a></li><li class="sidebar-sub-header"><a href="/how-it-works/the-file.html#does-it-have-to-be-a-separate-file" class="sidebar-link">Does it have to be a separate file?</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="thewall-configuration-file"><a href="#thewall-configuration-file" class="header-anchor">#</a> TheWall Configuration file</h2> <p>This file has two main purposes. The first is to indicate which endpoints are accesible by which roles. The second one is the indicate the path to the knex instance to connect to the Database. We will dig in to show how both works, but as a spoiler alert here is a config file:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    admin<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/edit'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>It creates two roles, admin and storeOwner. Admin has access to everything, while storeOwner only can POST to <code>store/:id/edit</code>, but changing the id value with the corresponding filter.</p> <h2 id="access"><a href="#access" class="header-anchor">#</a> Access</h2> <p>Well so the config file should export an object with the property <code>access</code>. This property will also be an object, where each property will be the name of a role. The value for each role will be an array indicating to which endpoints it has access to.</p> <h3 id="creating-roles"><a href="#creating-roles" class="header-anchor">#</a> Creating Roles</h3> <p>To create a new role the only thing we need to do is to add a property to the <code>access</code> object.</p> <h3 id="entry-as-text"><a href="#entry-as-text" class="header-anchor">#</a> Entry as text</h3> <p>The following example indicates each endpoint as a text.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    storeTwoOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'/store/2/edit'</span><span class="token punctuation">,</span>
+      <span class="token string">'/store/2/view'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    storeOneOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'/store/1/edit'</span><span class="token punctuation">,</span>
+      <span class="token string">'/store/1/view'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>So what is doing is defining two roles: storeTwoOwner and storeOneOwner. Each role has access to two endpoints. As no http verb is indicated, a GET verb is assumed.</p> <h3 id="adding-the-filter"><a href="#adding-the-filter" class="header-anchor">#</a> Adding the filter</h3> <p>What happen if we now have to add a third store, we could add the role storeThreeOwner, but it feels too repetitive right? We can do this by using the filter:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/edit'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/view'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>A lot have change from the previous example. First of all, we only have one role. Second, the access of this role is no longer a plain text, is an array. This allows to indicate that the url is dynamic and will change according to the filter. So instead of storeOneOwner, we will assign a storeOwner role with filter 1, analogous for storeTwoOwner.</p> <h3 id="adding-a-verb"><a href="#adding-a-verb" class="header-anchor">#</a> Adding a verb</h3> <p>So far all our examples involve GET endpoints, however there are other verbs around. To indicate a verb, just add a third paremeter to the entry. For instance:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/edit'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/view'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/registration'</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Not we added a third endpoint, this illustrate how to indicate the verb if the endpoint is not dynamic.</p> <h3 id="wildcards"><a href="#wildcards" class="header-anchor">#</a> Wildcards</h3> <p>Also some wild cards can be added. Here some examples:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    admin<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/*'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    everyStoreViewer<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'/store/*/view'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Here the admin role can access everything.
+storeOwner, can access every GET that starts with <code>/store/:id</code>, obviously replacing the id with the corresponding filter.
+everyStoreViewer can access every GET that starts with <code>/store/</code> and ends with <code>/view</code>, for example, <code>/store/1/view</code> and <code>/store/2/view</code>.</p> <h3 id="non-registered-endpoints"><a href="#non-registered-endpoints" class="header-anchor">#</a> non-registered Endpoints</h3> <p>If an endpoint is not registered, nor matches any entry of the config file, it will be assumed it is not restricted, therefore the hasAccess function will always return true.</p> <h2 id="knex"><a href="#knex" class="header-anchor">#</a> knex</h2> <p>The configuration also has a knex property. This is the path were a working knex instance is exported. Something of this sort is expected:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> environment <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> <span class="token string">'development'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./knexfile'</span><span class="token punctuation">)</span><span class="token punctuation">[</span>environment<span class="token punctuation">]</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'knex'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="does-it-have-to-be-a-separate-file"><a href="#does-it-have-to-be-a-separate-file" class="header-anchor">#</a> Does it have to be a separate file?</h2> <p>As a matter of fact no. The instance could be initialized as follow:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> configuration <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    admin<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/edit'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'thewall'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>configuration<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>This is completely fine, however we recommend to have separate files, in our opinion it is cleaner that way.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/how-it-works/the-wall.html" class="prev">
+        TheWall Instance
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.59e023f1.js" defer></script><script src="/assets/js/2.3f720234.js" defer></script><script src="/assets/js/9.6d653a81.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TheWall Docs</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.9da3c180.css" as="style"><link rel="preload" href="/assets/js/app.59e023f1.js" as="script"><link rel="preload" href="/assets/js/2.3f720234.js" as="script"><link rel="preload" href="/assets/js/7.a0013af4.js" as="script"><link rel="prefetch" href="/assets/js/10.0a3f19e3.js"><link rel="prefetch" href="/assets/js/3.6a2b7fa3.js"><link rel="prefetch" href="/assets/js/4.1b09c2c5.js"><link rel="prefetch" href="/assets/js/5.7ab6c937.js"><link rel="prefetch" href="/assets/js/6.8b3a8a82.js"><link rel="prefetch" href="/assets/js/8.3912d4b4.js"><link rel="prefetch" href="/assets/js/9.6d653a81.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9da3c180.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">TheWall Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/how-it-works/" class="nav-link">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/how-it-works/" class="nav-link">
+  How it Works
+</a></div><div class="nav-item"><a href="/gettingstarted/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Getting Started
+</a></div><div class="nav-item"><a href="/collaborate/" class="nav-link">
+  Collaborate!
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>Welcome to the <strong>TheWall Getting Started</strong></p> <p>To install TheWall simply run:</p> <p><code>npm i thewall</code></p> <p>After that, we recommend creating a <a href="/how-it-works/the-file.html">TheWall configuration file</a>. We leave an example here:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  access<span class="token operator">:</span> <span class="token punctuation">{</span>
+    admin<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    storeOwner<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'/store/:id/edit'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  knex<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token string">'knex.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>This file define two roles, an admin to access to everything and a storeOwner with access to 1 endpoint. You can edit this as desired.</p> <p>Note it also define a path for the <a href="https://knexjs.org/" target="_blank" rel="noopener noreferrer">knex<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> instance.</p> <p>Then we create our <a href="/how-it-works/the-wall.html">TheWall instance</a>. Here we leave an example:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../path/to/thewallfile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'thewall'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>And we are ready to go.</p> <h2 id="better-with-an-example"><a href="#better-with-an-example" class="header-anchor">#</a> Better with an example...</h2> <p>It is always better to work out with an example. So here is a <a href="http://chinchay.accionet.net/gettingstarted/apiMiddleware.html" target="_blank" rel="noopener noreferrer">link<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to a tutorial on how <a href="http://chinchay.accionet.net" target="_blank" rel="noopener noreferrer">Chinchay<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> is used with TheWall to create an API.</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.59e023f1.js" defer></script><script src="/assets/js/2.3f720234.js" defer></script><script src="/assets/js/7.a0013af4.js" defer></script>
+  </body>
+</html>
